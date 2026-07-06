@@ -12,6 +12,10 @@ env:
     commands:
       - clearState     # limpa o cache
       - launchApp   # abre de novo
+      - extendedWaitUntil:
+          visible:
+            id: "input-email"
+          timeout: 50000
       - tapOn:
           id: "input_username"
       - inputText: ${USERNAME}

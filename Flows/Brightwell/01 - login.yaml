@@ -2,6 +2,10 @@ appId: com.brightwellpayments.android.internal
 ---
 - launchApp:
     clearState: true
+- extendedWaitUntil:
+    visible:
+        id: "input-email"
+    timeout: 50000
 - tapOn:
     id: "input_username"
 - inputText: "testwu9995"
