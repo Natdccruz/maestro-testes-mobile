@@ -1,0 +1,31 @@
+appId: com.brightwellpayments.android.internal
+---
+- launchApp:
+    clearState: true
+
+- repeat:
+    while:
+      notVisible:
+        id: "edit_text"
+    times: 5   # limite de segurança, evita loop infinito
+    commands:
+      - clearState     # limpa o cache
+      - launchApp   # abre de novo
+      - tapOn:
+          id: "input_username"
+      - inputText: "testwu9995"
+      - tapOn: "Log in"
+      - tapOn:
+          id: "input_password"
+      - inputText: "Test1234!!"
+      - tapOn: "Log in"
+
+- assertVisible: "Please answer your security question."
+- assertVisible:
+    id: "edit_text"
+- tapOn:
+    id: "input_answer_text"
+- inputText: "test"
+- tapOn: "Continue"
+- assertVisible:
+    id: "availableBalanceText"

@@ -1,0 +1,26 @@
+appId: com.brightwellpayments.android.internal
+env:
+    MESAGE_SUPPORT: ${MESAGE_SUPPORT || "Update my name"}
+    
+---
+- assertVisible:
+    id: "availableBalanceText"
+- tapOn:
+    id: "action_support"
+- assertVisible:
+    id: "supportLandingMain"
+- tapOn:
+    id: "button_message"
+- assertVisible: "How can we help you?"
+- tapOn: "Something else"
+- assertVisible: "Something else"
+- tapOn: "I need to update my name"
+- assertVisible: "Ticket already open"
+- tapOn:
+    id: "button1"
+- tapOn:
+    id: "chat_bottom_bar"
+- inputText: ${MESAGE_SUPPORT}
+- tapOn:
+    id: "support_chat_send_button"
+- hideKeyboard

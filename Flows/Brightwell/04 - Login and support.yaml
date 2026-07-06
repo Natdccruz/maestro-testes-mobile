@@ -1,0 +1,11 @@
+appId: com.brightwellpayments.android.internal
+env:
+    USERNAME: Testwu9995
+    PASSWORD: Test1234!!
+    SQ: test
+    MESAGE_SUPPORT: Update my name
+---
+- launchApp:
+    clearState: true
+- runFlow: "subflows/Login.yaml"
+- runFlow: "subflows/support-ticket.yaml"

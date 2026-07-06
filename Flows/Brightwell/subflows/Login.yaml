@@ -1,0 +1,32 @@
+appId: com.brightwellpayments.android.internal
+env:
+     USERNAME: ${EMAIL || "Testwu9995"}
+     PASSWORD: ${PASSWORD || "Test1234!!"}
+     SQ: ${SQ || "test"}
+---
+- repeat:
+    while:
+      notVisible:
+        id: "edit_text"
+    times: 5   # limite de segurança, evita loop infinito
+    commands:
+      - clearState     # limpa o cache
+      - launchApp   # abre de novo
+      - tapOn:
+          id: "input_username"
+      - inputText: ${USERNAME}
+      - tapOn: "Log in"
+      - tapOn:
+          id: "input_password"
+      - inputText: ${PASSWORD}
+      - tapOn: "Log in"
+
+- assertVisible: "Please answer your security question."
+- assertVisible:
+    id: "edit_text"
+- tapOn:
+    id: "input_answer_text"
+- inputText: ${SQ}
+- tapOn: "Continue"
+- assertVisible:
+    id: "availableBalanceText"

@@ -1,0 +1,48 @@
+appId: com.brightwellpayments.android.internal
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: "input_username"
+- inputText: "testwu9995"
+- tapOn: "Log in"
+- tapOn:
+    id: "input_password"
+- inputText: "Test1234!!"
+- tapOn: "Log in"
+- tapOn:
+    id: "input_answer_text"
+- inputText: "test"
+- tapOn: "Continue"
+- assertVisible:
+    id: "availableBalanceText"
+- tapOn:
+    id: "action_support"
+- assertVisible:
+    id: "supportLandingMain"
+- tapOn:
+    id: "button_message"
+- assertVisible: "How can we help you?"
+- tapOn: "Something else"
+- assertVisible: "Something else"
+- tapOn: "I need to update my name"
+- assertVisible: "Ticket already open"
+- tapOn:
+    id: "button1"
+- tapOn:
+    id: "chat_bottom_bar"
+- inputText: "Update name"
+- tapOn:
+    id: "support_chat_send_button"
+- hideKeyboard
+
+
+
+
+
+
+
+
+
+
+
