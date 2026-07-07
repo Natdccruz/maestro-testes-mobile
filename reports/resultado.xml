@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="Test Suite" device="R7ARB0D73EP" tests="4" failures="2" time="435.0">
+    <testcase id="01-login" name="01-login" classname="01-login" file="flows\Brightwell\01-login.yaml" time="54.0" status="SUCCESS"/>
+    <testcase id="02-Open support Ticket" name="02-Open support Ticket" classname="02-Open support Ticket" file="flows\Brightwell\02-Open support Ticket.yaml" time="226.0" status="ERROR">
+      <failure>Assertion is false: id: edit_text is visible</failure>
+    </testcase>
+    <testcase id="03-Login with SQ (Bypass date)" name="03-Login with SQ (Bypass date)" classname="03-Login with SQ (Bypass date)" file="flows\Brightwell\03-Login with SQ (Bypass date).yaml" time="147.0" status="SUCCESS"/>
+    <testcase id="04-Loginysupport" name="04-Loginysupport" classname="04-Loginysupport" file="flows\Brightwell\04-Loginysupport.yaml" time="8.0" status="ERROR">
+      <failure>Unable to launch app com.brightwellpayments.android.internal</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
